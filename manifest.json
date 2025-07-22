@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "抖音评论导出器",
+  "version": "1.0",
+  "description": "导出抖音视频下所有评论为 Excel/Markdown 文件",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["https://www.douyin.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.douyin.com/*"],
+      "js": ["xlsx.full.min.js", "inject-ui.js", "content.js"],
+      "css": ["inject-ui.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
